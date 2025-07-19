@@ -32,7 +32,7 @@
   padding: 0;
 }
 
-.container {
+.container, .banner {
   max-width: 1140px;
   display: flex;
   align-items: center;
@@ -112,5 +112,22 @@
 
 .banner-right {
   background-image: url("../images/Circle\ design.svg");
-  background-size: cover;
+  background-size:contain;
+  background-repeat: no-repeat;
+}
+
+@media screen and (max-width:576px) {
+  .container{
+    flex-direction: column;
+  }
+  .banner{
+    flex-direction: column-reverse;
+  }
+  .banner-left{
+    text-align: center;
+  }
+  .btn-primary{
+    scale: 1.5;
+    transform-origin: center;
+  }
 }
